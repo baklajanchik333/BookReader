@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_background_light"
+    android:background="@drawable/img_background_night"
     tools:context=".MainActivity">
 
     <ImageView
@@ -24,7 +24,7 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/roboto_medium"
         android:text="Welcome to Book Reader"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/purple_200"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -57,11 +57,11 @@
         android:fontFamily="@font/roboto"
         android:text="Continue without login"
         android:textAllCaps="false"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/purple_200"
         app:cornerRadius="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/purple_500" />
+        app:strokeColor="@color/purple_200" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
