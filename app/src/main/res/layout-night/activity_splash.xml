@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_background_light"
+    android:background="@drawable/img_background_night"
     tools:context=".Activities.SplashActivity">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="@dimen/_200sdp"
         android:layout_height="@dimen/_200sdp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/img_splash_logo_light"
+        android:src="@drawable/img_splash_logo_night"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +25,8 @@
         android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/app_name"
-        android:textColor="@color/purple_500"
         android:textSize="@dimen/_18ssp"
+        android:textColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
