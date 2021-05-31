@@ -12,6 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookReader">
+        <activity android:name=".Activities.Dashboard.DashboardAdminActivity" />
+        <activity android:name=".Activities.Dashboard.DashboardUserActivity" />
+        <activity
+            android:name=".Activities.Authorization.LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Activities.Authorization.RegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Activities.SplashActivity"
             android:theme="@style/FullScreen">
@@ -21,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Activities.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

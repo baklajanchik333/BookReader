@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Book Reader</string>
+    <string name="welcome_to_book_reader">Welcome to Book Reader</string>
+    <string name="login">Login</string>
+    <string name="continue_without_login">Continue without login</string>
+    <string name="please_login">Please Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="new_user_signup"><font color='#000000'>New user? </font><b>SignUp</b></string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="dashboard_admin">Dashboard Admin</string>
+    <string name="abc_example_com">abc@example.com</string>
+    <string name="dashboard_user">Dashboard User</string>
+    <string name="fill_in_all_the_fields">Fill in all the fields</string>
+    <string name="enter_you_name">Enter you name</string>
+    <string name="enter_you_email">Enter you email</string>
+    <string name="invalid_email_pattern">Invalid email pattern!</string>
+    <string name="enter_password">Enter password!</string>
+    <string name="password_doesnt_match">Password doesn\'t match!</string>
+    <string name="the_password_must_contain_at_lest_6_characters">The password must contain at least 6 characters</string>
+    <string name="please_wait">Please wait</string>
+    <string name="creating_account">Creating account...</string>
+    <string name="saving_user_info">Saving user info...</string>
+    <string name="account_created">Account created</string>
+    <string name="logging_in">Logging In...</string>
+    <string name="checking_user">Checking User...</string>
 </resources>
