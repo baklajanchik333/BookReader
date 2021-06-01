@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookReader">
+        <activity android:name=".Activities.CategoryAddActivity"></activity>
         <activity android:name=".Activities.Dashboard.DashboardAdminActivity" />
         <activity android:name=".Activities.Dashboard.DashboardUserActivity" />
         <activity

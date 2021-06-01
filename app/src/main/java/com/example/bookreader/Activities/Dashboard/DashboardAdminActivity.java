@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.bookreader.Activities.CategoryAddActivity;
 import com.example.bookreader.Activities.MainActivity;
 import com.example.bookreader.databinding.ActivityDashboardAdminBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,6 +28,8 @@ public class DashboardAdminActivity extends AppCompatActivity {
             firebaseAuth.signOut();
             checkUser();
         });
+
+        binding.addCategoryBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), CategoryAddActivity.class)));
 
         checkUser();
     }
