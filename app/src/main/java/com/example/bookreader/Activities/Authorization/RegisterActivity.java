@@ -52,21 +52,21 @@ public class RegisterActivity extends AppCompatActivity {
         cPassword = Objects.requireNonNull(binding.confirmPasswordEt.getText()).toString().trim();
 
         if (TextUtils.isEmpty(name) & TextUtils.isEmpty(email) & TextUtils.isEmpty(password) & TextUtils.isEmpty(cPassword)) {
-            Toast.makeText(this, getString(R.string.fill_in_all_the_fields), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.fill_in_all_the_fields, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, getString(R.string.enter_you_name), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_you_name, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, getString(R.string.enter_you_email), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_you_email, Toast.LENGTH_SHORT).show();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, getString(R.string.invalid_email_pattern), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.invalid_email_pattern, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, getString(R.string.enter_password), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_password, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(cPassword)) {
             Toast.makeText(this, "Confirm password!", Toast.LENGTH_SHORT).show();
         } else if (!password.equals(cPassword)) {
-            Toast.makeText(this, getString(R.string.password_doesnt_match), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.password_doesnt_match, Toast.LENGTH_SHORT).show();
         } else if (password.length() < 6) {
-            Toast.makeText(this, getString(R.string.the_password_must_contain_at_lest_6_characters), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.the_password_must_contain_at_lest_6_characters, Toast.LENGTH_SHORT).show();
         } else {
             createUser();
         }
@@ -99,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
         hashMap.put("timestamp", timestamp);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(uid)
+        reference.child(Objects.requireNonNull(uid))
                 .setValue(hashMap)
                 .addOnSuccessListener(unused -> {
                     progressDialog.dismiss();

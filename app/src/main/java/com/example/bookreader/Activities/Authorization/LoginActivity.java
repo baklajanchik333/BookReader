@@ -14,8 +14,6 @@ import com.example.bookreader.Activities.Dashboard.DashboardAdminActivity;
 import com.example.bookreader.Activities.Dashboard.DashboardUserActivity;
 import com.example.bookreader.R;
 import com.example.bookreader.databinding.ActivityLoginBinding;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -57,13 +55,13 @@ public class LoginActivity extends AppCompatActivity {
         password = Objects.requireNonNull(binding.passwordEt.getText()).toString().trim();
 
         if (TextUtils.isEmpty(email) & TextUtils.isEmpty(password)) {
-            Toast.makeText(this, getString(R.string.fill_in_all_the_fields), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.fill_in_all_the_fields, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, getString(R.string.enter_you_email), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_you_email, Toast.LENGTH_SHORT).show();
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, getString(R.string.invalid_email_pattern), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.invalid_email_pattern, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, getString(R.string.enter_password), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_password, Toast.LENGTH_SHORT).show();
         } else {
             loginUser();
         }
@@ -74,12 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        checkUser();
-                    }
-                })
+                .addOnSuccessListener(authResult -> checkUser())
                 .addOnFailureListener(e -> {
                     progressDialog.dismiss();
                     Toast.makeText(LoginActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -92,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(firebaseUser.getUid())
+        reference.child(Objects.requireNonNull(firebaseUser).getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

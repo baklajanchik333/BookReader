@@ -46,7 +46,7 @@ public class CategoryAddActivity extends AppCompatActivity {
         category = Objects.requireNonNull(binding.categoryEt.getText()).toString().trim();
 
         if (TextUtils.isEmpty(category)) {
-            Toast.makeText(this, getString(R.string.please_enter_category), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.please_enter_category, Toast.LENGTH_SHORT).show();
         } else {
             addCategoryFirebase();
         }
@@ -70,7 +70,7 @@ public class CategoryAddActivity extends AppCompatActivity {
                 .addOnSuccessListener(unused -> {
                     binding.categoryEt.setText("");
                     progressDialog.dismiss();
-                    Toast.makeText(CategoryAddActivity.this, getString(R.string.category_added_successfully), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CategoryAddActivity.this, R.string.category_added_successfully, Toast.LENGTH_SHORT).show();
                 })
                 .addOnFailureListener(e -> {
                     progressDialog.dismiss();
